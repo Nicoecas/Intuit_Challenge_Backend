@@ -1,0 +1,4 @@
+add migration happens in => applicationcore
+dotnet ef migrations add descriptionFlockerSubtype --startup-project ../Intuit_Challenge/Intuit_Challenge.csproj -c "IntuitChallengeContext" -o "Data/Migrations"
+
+dotnet ef database update --startup-project ../Intuit_Challenge/Intuit_Challenge.csproj

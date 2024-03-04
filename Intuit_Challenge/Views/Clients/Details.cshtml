@@ -1,0 +1,60 @@
+﻿@model Intuit_Challenge.Entities.Client
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Names)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Names)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastNames)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastNames)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cuit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CellPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CellPhone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Intuit_Challenge.Entities.Client>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Clients</h2>
+
+
+<div>
+    <form asp-action="Index" method="get">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Name: </label>
+                <input name="name" id="name" class="form-control" type="text" title="Searcher for Name" value="@ViewBag.name" />
+            </div>
+            <div class="col-lg-6">
+                <label>LastName: </label>
+                <input name="lastName" id="lastName" class="form-control" type="text" title="Searcher for LastName" value="@ViewBag.lastName" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <input type="submit" value="Search" class="btn btn-success" style="width:49.7%; display:inline-block;" />
+                <a asp-action="Index" class="btn btn-danger" style="width:49.7%; display:inline-block;">Back to Full List</a>
+            </div>
+        </div>
+    </form>
+</div>
+<br />
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Names)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastNames)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cuit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CellPhone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Names)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastNames)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cuit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CellPhone)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
