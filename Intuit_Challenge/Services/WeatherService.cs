@@ -49,13 +49,14 @@ namespace Intuit_Challenge.Services
 
             foreach (var day in weather.days)
             {
+                DateTime date = day.datetime;
                 WeatherDayValues weatherDayValues = new WeatherDayValues
                 {
-                    weather_date = day.datetime,
+                    weather_date = date.ToString("MM-dd-yyyy"),
                     weather_desc = day.description,
-                    weather_tmax = day.tempmax,
-                    weather_tmin = day.tempmin,
-                    humidity = day.humidity,
+                    weather_tmax = day.tempmax + "°F",
+                    weather_tmin = day.tempmin + "°F",
+                    humidity = day.humidity + "%",
                     precip = day.precip,
                     precipprob = day.precipprob
                 };
@@ -87,13 +88,14 @@ namespace Intuit_Challenge.Services
 
             foreach (var day in weather.days)
             {
+                DateTime date = day.datetime;
                 WeatherDayValues weatherDayValues = new WeatherDayValues
                 {
-                    weather_date = day.datetime,
+                    weather_date = date.ToString("MM-dd-yyyy"),
                     weather_desc = day.description,
-                    weather_tmax = day.tempmax,
-                    weather_tmin = day.tempmin,
-                    humidity = day.humidity,
+                    weather_tmax = day.tempmax + "°F",
+                    weather_tmin = day.tempmin + "°F",
+                    humidity = day.humidity + "%",
                     precip = day.precip,
                     precipprob = day.precipprob
                 };
@@ -112,7 +114,7 @@ namespace Intuit_Challenge.Services
         public string weather_tmax { get; set; }
         public string weather_tmin { get; set; }
         public string humidity { get; set; }
-        public string precipprob { get; set; }
-        public string precip { get; set; }
+        public double precipprob { get; set; }
+        public double precip { get; set; }
     }
 }
